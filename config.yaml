@@ -1,0 +1,9 @@
+name: maclerock
+version: 1
+libraries:
+- name: "flask"
+  version: "0.7.2"
+- name: "flask-sqlalchemy"
+  version: "0.15"
+- name: "jinja2"
+  version: "2.6"
