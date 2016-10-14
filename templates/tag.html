@@ -1,0 +1,30 @@
+{% extends 'homepage.html' %}
+{% block content %}
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+       <ul class="uk-list uk-list-striped">
+           {% for tag in tags %}
+           <li>
+               <p class="uk-text-bold" style="font-size:30px">
+                   <a href="/select/{{ tag.tag_name }}">{{  tag.tag_name }}</a>
+                   {% if session.get('admin') %}
+                   <a style="color:#ff0000" href="/change/{{ tag.tag_id }}">编辑名称</a>
+                   {% endif %}
+               </p>
+           </li>
+           {% endfor %}
+       </ul>
+        {% if session.get('admin') %}
+        <form action="/tag" method="post" >
+            <p class="uk-text-center" style="width:80%;height:30px;font-size:28px">
+                请输入想添加的标签
+            </p>
+            <input  style="width:80%;height:30px;font-size:28px" name="tag">
+
+            <hr>
+            <button type="submit" class="uk-button uk-button-large">确定</button>
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

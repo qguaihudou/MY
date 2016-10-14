@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="uk-height-1-1">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Please Sign In</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/css/uikit.min.css', _external=True )}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/css/uikit.gradient.min.css', _external=True )}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/css/components/sticky.almost-flat.min.css', _external=True )}}">
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery-3.1.1.min.js', _external=True )}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='dist/js/uikit.min.js', _external=True )}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='dist/js/components/sticky.min.js', _external=True )}}"></script>
+</head>
+    <body class="uk-height-1-1">
+        <div class="uk-vertical-align uk-text-center uk-height-1-1">
+            <div class="uk-vertical-align-middle" style="width: 250px;">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+
+                {% for message in messages %}
+                      <div class="uk-alert" data-uk-alert>
+                          <a href="" class="uk-alert-close uk-close uk-text-large uk-text-center uk-alert-danger"></a>
+                          <p>{{ message }}</p>
+                      </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+
+                <img class="uk-margin-bottom" width="240" height="80" src="http://oeq8vntg3.bkt.clouddn.com/welcome.jpg" alt="Sign In">
+                <form  method="post" action="\signup" class="uk-panel uk-panel-box uk-form">
+                    <div class="uk-form-row">
+                        <input class="uk-width-1-1 uk-form-large" type="text" name="username" placeholder="Username">
+                    </div>
+                    <div class="uk-form-row">
+                        <input class="uk-width-1-1 uk-form-large" type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="uk-form-row">
+                        <input class="uk-width-1-1 uk-form-large" type="password" name="passwordr" placeholder="Password(same)">
+                    </div>
+                    <div class="uk-form-row">
+                        <button type="submit" class="uk-width-1-1 uk-button uk-button-primary uk-button-large">Register</button>
+                    </div>
+                    <div class="uk-form-row">
+                        <a href="\" class="uk-width-1-1 uk-button uk-button-primary uk-button-large">Home</a>
+                    </div>
+                    <div class="uk-form-row uk-text-small">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

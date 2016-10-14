@@ -1,0 +1,27 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/wangeditor/2.1.10/css/wangEditor.min.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/wangeditor/2.1.10/js/wangEditor.min.js"></script>
+
+
+
+<div class="uk-container uk-container-center">
+    <form action="\edit\{{ pos.id }}" method="post">
+         <h2 class="uk-text-bold uk-text-center" style="font-size:30px">Welcome Macle,Write Something Here</h2>
+        <h3 class="uk-text-bold" style="color:#ff0000">文章标题：</h3>
+        <p class="uk-text-center"><input style="width:80%;height:30px;font-size:28px" value="{{ pos.title }}" name="title"></p>
+        <h3 class="uk-text-bold" style="color:#ff0000">标签：</h3>
+
+        <select style="font-size:30px" name="tag">
+            {% for tag in tags %}
+            <option style="font-size:30px">{{ tag.tag_name }}</option>
+            {% endfor %}
+        </select>
+         <textarea id="editor" name="content" style="height:600px" type="text">{{ pos.content|safe }}</textarea>
+        <script type="text/javascript">var editor = new wangEditor('editor');editor.create();</script>
+        <p class="uk-text-center"><button type="submit" class="uk-button-primary">提交</button></p>
+    </form>
+</div>
+
+{% endblock %}

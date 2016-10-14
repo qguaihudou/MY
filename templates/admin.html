@@ -1,0 +1,14 @@
+{% extends 'homepage.html' %}
+{% block content %}
+
+{% if session.get('admin') %}
+<div class="uk-contain uk-contain-center" >
+    <div >
+            {% for pos in post %}
+            <p class="uk-text-bold" style="font-size:20px">{{ pos.id }}-----{{ pos.title }}<a href="/delete/{{ pos.id }}">删除</a> <a href="/edit/{{ pos.id }}">编辑</a> </p>
+            {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

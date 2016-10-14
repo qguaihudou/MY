@@ -1,0 +1,15 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+       <div class="">
+            <form action="/change/{{ tag.tag_id }}" method="post">
+                <label style="font-size:30px;color:#ff0000"> {{ tag.tag_name }}</label>
+                <p class="uk-text-center"><input style="width:80%;height:30px;font-size:28px" name="tag"></p>
+                <button type="submit" class="uk-button uk-button-large">确定</button>
+            </form>
+       </div>
+    </div>
+</div>
+{% endblock %}

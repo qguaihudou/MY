@@ -1,0 +1,17 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+       <div class="">
+           {% for pos in post %}
+            <article class="uk-article">
+                <h1 class="uk-text-bold uk-article-title" ><a href="/article/{{ pos.id }}">{{ pos.title }}</a></h1>
+                <p class="uk-article-meta">该日志由Macle发表于{{ pos.time }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;标签：<a href="/select/{{ pos.tag }}"><i class="uk-icon-tag"></i>{{ pos.tag }}</a></p>
+            </article>
+            <hr class="uk-article-divider">
+           {% endfor %}
+       </div>
+    </div>
+</div>
+{% endblock %}

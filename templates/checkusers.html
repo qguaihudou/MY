@@ -1,0 +1,20 @@
+{% extends 'homepage.html' %}
+{% block content %}
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <div class="uk-grid" data-uk-grid-margin>
+       <ul class="uk-list uk-list-striped">
+           <p class="uk-text uk-text-center uk-text-bole" style="color:#ff0f0f">你现在拥有的用户：</p>
+           {% for user in users %}
+           <li>
+               <p class="uk-text-bold" style="font-size:30px">
+                   {{  user.username }}
+               </p>
+               <p class="uk-text-bold" style="font-size:30px;color:#ff0000">
+                   {{  user.password }}
+               </p>
+           </li>
+           {% endfor %}
+       </ul>
+    </div>
+</div>
+{% endblock %}

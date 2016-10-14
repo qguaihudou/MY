@@ -1,0 +1,24 @@
+{% extends 'homepage.html' %}
+{% block content %}
+
+{% if session.get('admin') %}
+{% if pos %}
+<div class="uk-container uk-container-center">
+    <p style= "font-size:30px">
+        Are you sure to delete this article?
+        <hr class="uk-article-divider">
+        {{ pos.title }}
+    </p>
+    <hr class="uk-article-divider">
+    <p>
+        {{ pos.content|safe }}
+    </p>
+    <a style="font-size:50px" href="{{ url_for('deletepost',pid=pos.id) }}">Yes I'm sure</a>
+    <hr class="uk-article-divider">
+    <a style="font-size:50px" href="/admin">No,it's just a mistake</a>
+</div>
+
+{% endif %}
+{% endif %}
+
+{% endblock %}
