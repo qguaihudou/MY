@@ -11,7 +11,7 @@ app.debug = True
 app.secret_key = 'it is a my fucking blog'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['username']='qguaihudou'
-app.config['password']='qazx6631683'
+app.config['password']=''
 # create sqlalchemy object
 db = SQLAlchemy(app)
 
